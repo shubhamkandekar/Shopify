@@ -28,11 +28,11 @@ const Login = () => {
         localStorage.setItem("auth", JSON.stringify(res.data));
         navigate(location.state || "/");
       } else {
-        toast.error(res.data.error);
+        toast.error(res.data.message);
       }
     } catch (error) {
       console.log(error);
-      toast.error(res.data.error);
+      toast.error("Incorrect Email Or Password");
     }
   };
   return (

@@ -14,7 +14,7 @@ const Layout = ({ children,title,description,keywords, author }) => {
         <title>{title}</title>
       </Helmet>
       <Header />
-      <main style={{ minHeight: "75vh" }}>{children}
+      <main style={{ minHeight: "75vh" }} className="bg-gradient-to-l  from-gray-200 to-blue-100">{children}
       <Toaster />
       </main>
       <Footer />
@@ -23,7 +23,7 @@ const Layout = ({ children,title,description,keywords, author }) => {
 };
 
 Layout.defaultProps ={
-  title: "Ecommerce app -shopnow",
+  title: "Shopify-shopnow",
   description: "Ecommerce app using MERN Stack",
   keywords: "Mongodb,react,express,mongodb,fashion,footwear,clothing,earphone,electronics",
   author: "shubham kandekar"

@@ -1,28 +1,59 @@
-import React from 'react'
-import Layout from '../../components/Layout/Layout'
-import UserMenu from '../../components/Layout/UserMenu'
-import { useAuth } from '../../context/auth'
+import React from "react";
+import Layout from "../../components/Layout/Layout";
+import UserMenu from "../../components/Layout/UserMenu";
+import { useAuth } from "../../context/auth";
 const Dashboard = () => {
   const [auth] = useAuth();
   return (
-    <Layout title={'Dashboard -Shopify'}>
-       <div className="container flex">
+    <Layout title={"Dashboard -Shopify"}>
+      <div className=" flex">
         <div className="flex-shrink-0">
           <UserMenu />
         </div>
-        <div className="flex flex-col flex-1">
-          <div className="max-w-screen-lg mx-auto p-4 flex  ">
-            <div className="card items-start w-auto">
-              <h3 className='text-lg font-bold font-poppins'>user Name: <span className='font-medium'>{auth?.user?.name}</span></h3>
-              <h3 className='text-lg font-bold font-poppins'>User Email: <span className='font-medium'>{auth?.user?.email}</span></h3>
-              <h3 className='text-lg font-bold font-poppins'>user contact: <span className='font-medium'>{auth?.user?.phone}</span></h3>
-              <h3 className='text-lg font-bold font-poppins'>user Address: <span className='font-medium'>{auth?.user?.address}</span></h3>
+        <div className="3/4 flex justify-center items-center  w-full ">
+          <div className="w-full h-full mx-auto p-4 flex flex-col justify-center items-center">
+            <div className="user-avatar h-36 rounded-[50%] w-auto bg-gradient-to-br from-slate-200 to-purple-300 text-white flex items-center justify-center mb-5 p-2">
+              <span className="text-4xl font-bold text-primary">
+                {auth?.user?.name}
+              </span>
+            </div>
+            <div className="card w-auto p-6 rounded-lg shadow-lg bg-gradient-to-r from-purple-400 to-blue-500 text-white">
+              <h2 className="text-4xl font-extrabold font-poppins mb-6">
+                Welcome,{" "}
+                <span className="text-orange-300">{auth?.user?.name}</span>🎆
+              </h2>
+              <div className="user-info">
+                <div className="info-item mb-4">
+                  <span className="text-lg font-semibold text-gray-700">
+                    User Email:
+                  </span>
+                  <span className="text-lg font-medium ml-1">
+                    {auth?.user?.email}
+                  </span>
+                </div>
+                <div className="info-item mb-4">
+                  <span className="text-lg font-semibold text-gray-700">
+                    User Contact:
+                  </span>
+                  <span className="text-lg font-medium ml-1">
+                    {auth?.user?.phone}
+                  </span>
+                </div>
+                <div className="info-item">
+                  <span className="text-lg font-semibold text-gray-700">
+                    User Address:
+                  </span>
+                  <span className="text-lg font-medium ml-1">
+                    {auth?.user?.address}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

@@ -13,7 +13,7 @@ const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isCatOpen, setisCatOpen] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleButtonClick = () => {
     setIsNavOpen(!isNavOpen);
   };
@@ -32,7 +32,8 @@ const Header = () => {
     });
     localStorage.removeItem("auth");
     toast.success("Logout Successfully");
-    navigate("/");
+    // navigate("/");
+    window.location.href = "/";
   };
   return (
     <>

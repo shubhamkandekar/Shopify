@@ -41,7 +41,7 @@ router.put(
 );
 
 
-//get products || method GET
+//get allproducts || method GET
 router.get("/get-product", getProductController);
 
 //get Single Product method ||post

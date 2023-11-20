@@ -37,7 +37,7 @@ const Products = () => {
               All Listed Products
             </h1>
           </div>
-          <div className="grid grid-cols-1 mb-3  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-3">
+          <div className="grid grid-cols-1 mb-3 xxs:grid-cols-2  xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 mx-3">
             {products?.map((p) => (
               <Link
                 key={p._id}

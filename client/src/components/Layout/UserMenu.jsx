@@ -9,14 +9,14 @@ const UserMenu = () => {
   };
   return (
     <>
-      <div className="h-screen">
+      
       {!sidebarVisible && (
         <button
           data-drawer-target="default-sidebar"
           data-drawer-toggle="default-sidebar"
           aria-controls="default-sidebar"
           type="button"
-          className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 bg-blue-900 dark:focus:ring-gray-600"
           onClick={toggleSidebar}
         >
           <span className="sr-only">Open sidebar</span>
@@ -36,16 +36,16 @@ const UserMenu = () => {
         </button>
          )}
 
-        <aside
+        {sidebarVisible && (<aside
           id="default-sidebar"
-          className={`  left-0 z-40 w-64 h-screen transition-transform ${
+          className={`  left-0 z-40 lg:w-64 md:w-64 sm:w-40 ss:w-36 xs:w-36 xxs:w-32 transition-transform ${
             sidebarVisible ? "translate-x-0" : "-translate-x-full"
           } sm:translate-x-0 `}
           aria-label="Sidebar"
         >
-          <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-            <div className="flex justify-between text-white pb-1 border-white border-b-2 border-opacity-50 items-center">
-              <h4 className="text-center font-semibold font-poppins ">
+          <div className="h-full px-3 py-4 overflow-y-auto ">
+            <div className="flex justify-between  pb-1 border-gray-700 border-b-2  items-center">
+              <h4 className="text-center font-semibold font-poppins mt-1 ">
                 User Panel
               </h4>
 
@@ -71,14 +71,14 @@ const UserMenu = () => {
               </div>
             </div>
 
-            <ul className="space-y-2 font-medium">
-              <li>
+            <ul className="space-y-2 font-medium mt-2 ">
+              <li className="border-gray-400 border-b-2 hover:border-none">
                 <NavLink
                   to="/dashboard/user/profile"
-                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
-                    className="w-6 h-6 text-gray-800 dark:text-white"
+                    className="w-6 h-6 text-gray-800 hover:text-white group-hover:text-gray-900 dark:group-hover:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -89,13 +89,13 @@ const UserMenu = () => {
                   <span className="flex-1 ml-3 whitespace-nowrap">Profile</span>
                 </NavLink>
               </li>
-              <li>
+              <li className="border-gray-400 border-b-2 hover:border-none">
                 <NavLink
                   to="/dashboard/user/orders"
-                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
-                    className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                    className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-700 group-hover:text-gray-900 dark:group-hover:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -108,8 +108,8 @@ const UserMenu = () => {
               </li>
             </ul>
           </div>
-        </aside>
-      </div>
+        </aside>)}
+      
     </>
   );
 };

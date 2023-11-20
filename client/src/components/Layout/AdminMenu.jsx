@@ -17,7 +17,7 @@ const AdminMenu = () => {
               data-drawer-toggle="default-sidebar"
               aria-controls="default-sidebar"
               type="button"
-              className="toggle-button inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className=" flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               onClick={toggleSidebar}
             >
               <span className="sr-only">Open sidebar</span>
@@ -38,16 +38,16 @@ const AdminMenu = () => {
           
         )}
 
-        <aside
+       {sidebarVisible &&( <aside
           id="default-sidebar"
-          className={`  left-0 z-40 w-auto lg:w-64  h-screen transition-transform ${
+          className={`  left-0 z-40 w-auto  lg:w-64   transition-transform ${
             sidebarVisible ? "translate-x-0" : "-translate-x-full"
           } sm:translate-x-0`}
           aria-label="Sidebar"
         >
-          <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-            <div className="flex justify-between text-white pb-1 border-white border-b-2 border-opacity-50 items-center">
-              <h4 className="text-center font-semibold font-poppins ">
+          <div className="h-full px-3 py-4 overflow-y-auto">
+            <div className="flex justify-between  pb-1 border-gray-700 border-b-2  items-center">
+              <h4 className="text-center font-semibold font-poppins mt-1 ">
                 Admin Panel
               </h4>
               <div className="close-button flex justify-end p-2">
@@ -73,10 +73,10 @@ const AdminMenu = () => {
             </div>
 
             <ul className="space-y-2 font-medium">
-              <li>
+              <li className="border-gray-400 border-b-2 hover:border-none">
                 <NavLink
                   to="/dashboard/admin/create-category"
-                  className="flex mt-2 items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  className="flex mt-2 items-center p-2 text-gray-900 rounded-lg hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
                     className="w-3.5 h-3.5"
@@ -98,10 +98,10 @@ const AdminMenu = () => {
                   </span>
                 </NavLink>
               </li>
-              <li>
+              <li className="border-gray-400 border-b-2 hover:border-none">
                 <NavLink
                   to="/dashboard/admin/create-product"
-                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
                     className="flex-shrink-0 w-3.5 h-3.5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -117,10 +117,10 @@ const AdminMenu = () => {
                   </span>
                 </NavLink>
               </li>
-              <li>
+              <li className="border-gray-400 border-b-2 hover:border-none">
                 <NavLink
                   to="/dashboard/admin/products"
-                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
                     className="flex-shrink-0 w-3.5 h-3.5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -136,10 +136,10 @@ const AdminMenu = () => {
                   </span>
                 </NavLink>
               </li>
-              <li>
+              <li className="border-gray-400 border-b-2 hover:border-none">
                 <NavLink
                   to="/dashboard/admin/orders"
-                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
                     className="flex-shrink-0 w-3.5 h-3.5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -156,10 +156,10 @@ const AdminMenu = () => {
                 </NavLink>
               </li>
 
-              <li>
+              <li className="border-gray-400 border-b-2 hover:border-none">
                 <NavLink
                   to="/dashboard/admin/user"
-                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  className="flex items-center p-2 text-gray-900 rounded-lg hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
                     className="flex-shrink-0 w-3.5 h-3.5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -175,7 +175,7 @@ const AdminMenu = () => {
               </li>
             </ul>
           </div>
-        </aside>
+        </aside>)}
       </div>
     </>
   );

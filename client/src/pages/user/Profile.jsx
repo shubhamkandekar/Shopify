@@ -51,13 +51,17 @@ const Profile = () => {
   };
   return (
     <Layout title={"profile shopify"}>
-      <div style={{ width: "100vw" }} className="container flex">
-        <div className="flex-shrink-0">
+      <div  className=" flex">
+        <div className="1/4">
           <UserMenu />
         </div>
-        <div className="flex flex-col flex-1">
-          <section className="screen w-full  bg-cover bg-center bg-[url('https://img.freepik.com/free-photo/black-friday-elements-assortment_23-2149074076.jpg?w=1060&t=st=1697133419~exp=1697134019~hmac=a2cd9c6f186996cc034ca4bffb4c619a76bd08fe3c6a9b65909c4729458f585f')] ">
-            <div className="flex flex-col  items-center md:mx-5 sm:mx-5 ss:mx-24 xs:mx-16 justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div className="w-3/4  ">
+        <h1 className="w-auto mt-5 font-poppins text-2xl md:text-3xl font-semibold text-center mb-4 bg-gradient-to-tr from-blue-400 rounded-lg to-blue-100 py-3 mx-3">
+              <span className="text-orange-500">{auth?.user?.name}</span> Your
+               Profile Details 🧑🏻
+            </h1>
+          <section className=" flex flex-col w-full ">
+            <div className="flex flex-col  items-center justify-center px-6 pb-5  md:h-screen lg:py-0">
               <div className="w-full  bg-gray-200 bg-opacity-75 rounded-lg shadow-xl  md:mt-0 sm:max-w-md xl:p-0">
                 <div className="p-6 flex flex-col space-y-4 md:space-y-6 sm:p-8">
                   <h1 className="text-xl font-poppins font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
@@ -167,7 +171,7 @@ const Profile = () => {
             </div>
           </section>
         </div>
-      </div>
+        </div>
     </Layout>
   );
 };
